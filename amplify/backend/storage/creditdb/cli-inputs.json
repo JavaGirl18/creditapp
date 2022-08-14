@@ -1,0 +1,10 @@
+{
+  "resourceName": "creditdb",
+  "tableName": "creditdb",
+  "partitionKey": {
+    "fieldName": "test1",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

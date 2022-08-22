@@ -14,32 +14,38 @@ Coded by www.creative-tim.com
 */
 
 // @mui material components
-import Grid from "@mui/material/Grid";
+import { InputLabel, MenuItem, Select } from '@mui/material'
+import Grid from '@mui/material/Grid'
 
 // Material Dashboard 2 PRO React TS components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
+import MDBox from 'components/MDBox'
+import MDTypography from 'components/MDTypography'
 
 // NewUser page components
-import FormField from "layouts/pages/users/new-user/components/FormField";
+import FormField from 'layouts/pages/users/new-user/components/FormField'
+import { type } from 'os'
 
 function UserInfo({ formData }: any): JSX.Element {
-  const { formField, values, errors, touched } = formData;
-  const { firstName, lastName, company, email, password, repeatPassword } = formField;
+  const { formField, values, errors, touched } = formData
+  const { firstName, lastName, company, email, type } = formField
   const {
     firstName: firstNameV,
     lastName: lastNameV,
     company: companyV,
     email: emailV,
-    password: passwordV,
-    repeatPassword: repeatPasswordV,
-  } = values;
+    type: typeV,
+    // password: passwordV,
+    // repeatPassword: repeatPasswordV,
+  } = values
 
+ const handleType ()=> {
+
+ }
   return (
     <MDBox>
       <MDBox lineHeight={0}>
-        <MDTypography variant="h5">About me</MDTypography>
-        <MDTypography variant="button" color="text">
+        <MDTypography variant='h5'>About me</MDTypography>
+        <MDTypography variant='button' color='text'>
           Mandatory informations
         </MDTypography>
       </MDBox>
@@ -91,19 +97,25 @@ function UserInfo({ formData }: any): JSX.Element {
           </Grid>
         </Grid>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6}>
-            <FormField
-              type={password.type}
-              label={password.label}
-              name={password.name}
-              value={passwordV}
-              placeholder={password.placeholder}
-              error={errors.password && touched.password}
-              success={passwordV.length > 0 && !errors.password}
-              inputProps={{ autoComplete: "" }}
-            />
+          <Grid item xs={6} sm={3}>
+            <InputLabel id='demo-simple-select-label'>Type</InputLabel>
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={6} sm={3}></Grid>
+          <Select
+            label={'Type'}
+            name={type.name}
+            placeholder={type.placeholder}
+            error={errors.type && touched.type}
+            id='demo-simple-select'
+            value={typeV}
+          >
+            <MenuItem value={10}>Type 1</MenuItem>
+            <MenuItem value={20}>Type 2</MenuItem>
+            <MenuItem value={30}>Type 3</MenuItem>
+          </Select>
+        </Grid>
+        {/* </Grid> */}
+        {/* <Grid item xs={12} sm={6}>
             <FormField
               type={repeatPassword.type}
               label={repeatPassword.label}
@@ -113,12 +125,12 @@ function UserInfo({ formData }: any): JSX.Element {
               error={errors.repeatPassword && touched.repeatPassword}
               success={repeatPasswordV.length > 0 && !errors.repeatPassword}
               inputProps={{ autoComplete: "" }}
-            />
-          </Grid>
-        </Grid>
+            />  */}
+        {/* </Grid> */}
+        {/* </Grid> */}
       </MDBox>
     </MDBox>
-  );
+  )
 }
 
-export default UserInfo;
+export default UserInfo

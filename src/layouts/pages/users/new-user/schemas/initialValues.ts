@@ -13,7 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import checkout from "layouts/pages/users/new-user/schemas/form";
+import checkout from 'layouts/pages/users/new-user/schemas/form'
 
 const {
   formField: {
@@ -21,36 +21,38 @@ const {
     lastName,
     company,
     email,
-    password,
-    repeatPassword,
+    type,
+    // password,
+    // repeatPassword,
     address1,
     address2,
     city,
     zip,
-    twitter,
-    facebook,
-    instagram,
-    publicEmail,
-    bio,
+    // twitter,
+    // facebook,
+    // instagram,
+    // publicEmail,
+    // bio,
   },
-} = checkout;
+} = checkout
 
 const initialValues = {
-  [firstName.name]: "",
-  [lastName.name]: "",
-  [company.name]: "",
-  [email.name]: "",
-  [password.name]: "",
-  [repeatPassword.name]: "",
-  [address1.name]: "",
-  [address2.name]: "",
-  [city.name]: "",
-  [zip.name]: "",
-  [twitter.name]: "",
-  [facebook.name]: "",
-  [instagram.name]: "",
-  [publicEmail.name]: "",
-  [bio.name]: "",
-};
+  [firstName.name]: '',
+  [lastName.name]: '',
+  [company.name]: '',
+  [email.name]: '',
+  [type.name]: '',
+  // [password.name]: "",
+  // [repeatPassword.name]: "",
+  [address1.name]: '',
+  [address2.name]: '',
+  [city.name]: '',
+  [zip.name]: '',
+  // [twitter.name]: '',
+  // [facebook.name]: '',
+  // [instagram.name]: '',
+  // [publicEmail.name]: '',
+  // [bio.name]: '',
+}
 
-export default initialValues;
+export default initialValues

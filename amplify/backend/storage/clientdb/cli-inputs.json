@@ -1,8 +1,8 @@
 {
-  "resourceName": "creditdb",
-  "tableName": "creditdb",
+  "resourceName": "clientdb",
+  "tableName": "clientdb",
   "partitionKey": {
-    "fieldName": "test1",
+    "fieldName": "name",
     "fieldType": "string"
   },
   "gsi": [],

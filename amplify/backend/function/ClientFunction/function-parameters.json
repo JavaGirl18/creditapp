@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "auth": {
+      "creditappfe57d2a0": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "storage": {
+      "clientdb": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

@@ -40,15 +40,8 @@ import React, {
   ReactElement,
 } from 'react'
 import './App.css'
-import { API, graphqlOperation, Storage } from 'aws-amplify'
+import { API, Auth, Storage } from 'aws-amplify'
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
-import { GraphQLQuery } from '@aws-amplify/api'
-import { listNotes } from './graphql/queries'
-import {
-  createNote as createNoteMutation,
-  deleteNote as deleteNoteMutation,
-} from './graphql/mutations'
-import { Note } from './models'
 // Material Dashboard 2 PRO React TS Dark Mode themes
 import themeDark from 'assets/theme-dark'
 import themeDarkRTL from 'assets/theme-dark/theme-rtl'
@@ -130,6 +123,15 @@ const App: React.FC = () => {
     document.documentElement.scrollTop = 0
     document.scrollingElement.scrollTop = 0
   }, [pathname])
+
+  useEffect(() => {
+    API.get('clientapi', '/clients/name', {}).then((clientResponse: any) =>
+      console.log(clientResponse)
+    )
+    // Auth.currentAuthenticatedUser().then((user) => {
+    //   console.log('user email = ' + JSON.stringify(user))
+    // });
+  }, [])
 
   const getRoutes = (allRoutes: any[]): any =>
     allRoutes.map(

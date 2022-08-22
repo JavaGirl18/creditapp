@@ -1,35 +1,38 @@
 export type AmplifyDependentResourcesAttributes = {
     "auth": {
-        "creditapp": {
+        "creditappfe57d2a0": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",
             "UserPoolArn": "string",
             "UserPoolName": "string",
             "AppClientIDWeb": "string",
-            "AppClientID": "string",
-            "CreatedSNSRole": "string"
+            "AppClientID": "string"
         }
     },
     "api": {
-        "creditapp": {
-            "GraphQLAPIKeyOutput": "string",
-            "GraphQLAPIIdOutput": "string",
-            "GraphQLAPIEndpointOutput": "string"
+        "clientapi": {
+            "RootUrl": "string",
+            "ApiName": "string",
+            "ApiId": "string"
         }
     },
     "storage": {
-        "creditdb": {
+        "clientdb": {
             "Name": "string",
             "Arn": "string",
             "StreamArn": "string",
             "PartitionKeyName": "string",
             "PartitionKeyType": "string",
             "Region": "string"
-        },
-        "content": {
-            "BucketName": "string",
-            "Region": "string"
+        }
+    },
+    "function": {
+        "ClientFunction": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
         }
     }
 }

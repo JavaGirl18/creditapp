@@ -27,29 +27,28 @@ import { type } from 'os'
 
 function UserInfo({ formData }: any): JSX.Element {
   const { formField, values, errors, touched } = formData
-  const { firstName, lastName, company, email, type } = formField
+  const { firstName, lastName, company, email, type, name } = formField
   const {
     firstName: firstNameV,
     lastName: lastNameV,
     company: companyV,
     email: emailV,
     type: typeV,
+    name: nameV,
     // password: passwordV,
     // repeatPassword: repeatPasswordV,
   } = values
-
- const handleType ()=> {
-
- }
+  console.log(typeV)
+  console.log(company)
   return (
-    <MDBox>
+    <MDBox paddingBottom={0}>
       <MDBox lineHeight={0}>
         <MDTypography variant='h5'>About me</MDTypography>
         <MDTypography variant='button' color='text'>
           Mandatory informations
         </MDTypography>
       </MDBox>
-      <MDBox mt={1.625}>
+      <MDBox mt={10.625}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <FormField
@@ -95,27 +94,37 @@ function UserInfo({ formData }: any): JSX.Element {
               success={emailV.length > 0 && !errors.email}
             />
           </Grid>
-        </Grid>
-        <Grid container spacing={3}>
-          <Grid item xs={6} sm={3}>
-            <InputLabel id='demo-simple-select-label'>Type</InputLabel>
+          <Grid>
+            <FormField
+              type={name.type}
+              label={name.label}
+              name={name.name}
+              value={nameV}
+              placeholder={name.placeholder}
+              error={errors.name && touched.name}
+              success={nameV.length > 0 && !errors.name}
+            />
           </Grid>
-          <Grid item xs={6} sm={3}></Grid>
-          <Select
-            label={'Type'}
-            name={type.name}
-            placeholder={type.placeholder}
-            error={errors.type && touched.type}
-            id='demo-simple-select'
-            value={typeV}
-          >
-            <MenuItem value={10}>Type 1</MenuItem>
-            <MenuItem value={20}>Type 2</MenuItem>
-            <MenuItem value={30}>Type 3</MenuItem>
-          </Select>
         </Grid>
-        {/* </Grid> */}
-        {/* <Grid item xs={12} sm={6}>
+        <Grid container spacing={1} alignItems={'center'}>
+          {/* <Grid item xs={6} sm={1}> */}
+          <InputLabel id='demo-simple-select-label'>Type</InputLabel>
+          {/* </Grid> */}
+          <Grid item xs={6} sm={5}>
+            <FormField
+              component='select'
+              type={type.type}
+              label={type.label}
+              name={type.name}
+              placeholder={type.placeholder}
+            >
+              <option value={'10'}>Type 1</option>
+              <option value={'20'}>Type 2</option>
+              <option value={'30'}>Type 3</option>
+            </FormField>
+          </Grid>
+          {/* </Grid> */}
+          {/* <Grid item xs={12} sm={6}>
             <FormField
               type={repeatPassword.type}
               label={repeatPassword.label}
@@ -126,8 +135,8 @@ function UserInfo({ formData }: any): JSX.Element {
               success={repeatPasswordV.length > 0 && !errors.repeatPassword}
               inputProps={{ autoComplete: "" }}
             />  */}
-        {/* </Grid> */}
-        {/* </Grid> */}
+          {/* </Grid> */}
+        </Grid>
       </MDBox>
     </MDBox>
   )

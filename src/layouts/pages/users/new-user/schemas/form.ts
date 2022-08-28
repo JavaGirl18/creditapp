@@ -16,6 +16,11 @@ Coded by www.creative-tim.com
 const form = {
   formId: 'new-user-form',
   formField: {
+    name: {
+      name: 'name',
+      label: 'name',
+      errorMsg: 'Name is required.',
+    },
     firstName: {
       name: 'firstName',
       label: 'First Name',

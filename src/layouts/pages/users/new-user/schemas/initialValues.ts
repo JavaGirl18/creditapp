@@ -22,6 +22,7 @@ const {
     company,
     email,
     type,
+    name,
     // password,
     // repeatPassword,
     address1,
@@ -39,6 +40,7 @@ const {
 const initialValues = {
   [firstName.name]: '',
   [lastName.name]: '',
+  [name.name]: '',
   [company.name]: '',
   [email.name]: '',
   [type.name]: '',

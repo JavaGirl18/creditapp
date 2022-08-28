@@ -64,6 +64,7 @@ import SignInCover from 'layouts/authentication/sign-in/cover'
 import SignInIllustration from 'layouts/authentication/sign-in/illustration'
 import SignUpCover from 'layouts/authentication/sign-up/cover'
 import ResetCover from 'layouts/authentication/reset-password/cover'
+import AllUsers from 'layouts/pages/users/allUsers'
 
 // Material Dashboard 2 PRO React TS components
 import MDAvatar from 'components/MDAvatar'
@@ -156,6 +157,12 @@ const routes = [
             key: 'new-user',
             route: '/pages/users/new-user',
             component: <NewUser />,
+          },
+          {
+            name: 'All Users',
+            key: 'all-users',
+            route: '/pages/users/all-users',
+            component: <AllUsers />,
           },
         ],
       },

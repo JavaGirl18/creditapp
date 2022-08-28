@@ -17,13 +17,14 @@ import * as Yup from 'yup'
 import checkout from 'layouts/pages/users/new-user/schemas/form'
 
 const {
-  formField: { firstName, lastName, email, type, address1, city, zip },
+  formField: { email, type, address1, city, zip, name, firstName, lastName },
 } = checkout
 
 const validations = [
   Yup.object().shape({
     [firstName.name]: Yup.string().required(firstName.errorMsg),
     [lastName.name]: Yup.string().required(lastName.errorMsg),
+    [name.name]: Yup.string().required(name.errorMsg),
     [email.name]: Yup.string().required(email.errorMsg).email(email.invalidMsg),
     [type.name]: Yup.string().required(type.errorMsg),
     // [password.name]: Yup.string().required(password.errorMsg).min(6, password.invalidMsg),

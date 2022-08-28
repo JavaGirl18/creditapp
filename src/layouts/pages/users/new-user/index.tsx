@@ -53,6 +53,7 @@ function getSteps(): string[] {
 function getStepContent(stepIndex: number, formData: any): JSX.Element {
   switch (stepIndex) {
     case 0:
+      console.log(formData)
       return <UserInfo formData={formData} />
     case 1:
       return <Address formData={formData} />
@@ -105,7 +106,7 @@ function NewUser(): JSX.Element {
       actions.setSubmitting(false)
     }
   }
-
+  console.log(initialValues)
   return (
     <DashboardLayout>
       <DashboardNavbar />
